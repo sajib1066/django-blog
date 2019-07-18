@@ -31,6 +31,11 @@ class Tags(models.Model):
     def __str__(self):
         return self.name
 
+class PostManager(models.Manager):
+    def latest_post(self):
+        l_post = Post.objects.filter(is_draft=False).order_by('-pub_date')[:3]
+        return l_post
+
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     image = models.ImageField(upload_to='post_images')
@@ -41,5 +46,22 @@ class Post(models.Model):
     is_draft = models.BooleanField(default=False)
     pub_date = models.DateTimeField(auto_now_add=True)
 
+    objects = PostManager()
+
     def __str__(self):
         return self.title
+
+class FeaturedPostManager(models.Manager):
+    def featured_post(self):
+        f_post = FeaturedPost.objects.filter(is_draft=True).order_by('-date')[:2]
+        return f_post
+
+class FeaturedPost(models.Model):
+    post = models.OneToOneField(Post, on_delete=models.CASCADE)
+    is_draft = models.BooleanField(default=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    objects = FeaturedPostManager()
+
+    def __str__(self):
+        return self.post
