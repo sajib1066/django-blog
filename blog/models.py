@@ -58,7 +58,7 @@ class FeaturedPostManager(models.Manager):
 
 class FeaturedPost(models.Model):
     post = models.OneToOneField(Post, on_delete=models.CASCADE)
-    is_draft = models.BooleanField(default=True)
+    is_draft = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
 
     objects = FeaturedPostManager()
