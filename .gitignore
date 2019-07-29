@@ -1,3 +1,5 @@
+post_images/
+author_images/
 db.sqlite3
 env/
 media
