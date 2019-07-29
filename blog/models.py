@@ -6,7 +6,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class AuthorProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     author_name = models.CharField(max_length=45)
-    author_img = models.ImageField(upload_to='author_images')
+    author_img = models.ImageField(upload_to='media/author_images')
     author_description = models.TextField()
     author_facebook = models.URLField(null=True, blank=True)
     author_twitter = models.URLField(null=True, blank=True)
@@ -38,7 +38,7 @@ class PostManager(models.Manager):
 
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    image = models.ImageField(upload_to='post_images')
+    image = models.ImageField(upload_to='media/post_images')
     content = RichTextUploadingField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tags)
@@ -64,4 +64,4 @@ class FeaturedPost(models.Model):
     objects = FeaturedPostManager()
 
     def __str__(self):
-        return self.post
+        return str(self.post)
