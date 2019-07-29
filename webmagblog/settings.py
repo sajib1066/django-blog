@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
-    
+
     'blog'
 ]
 
@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'webmagblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'webmag_db',
+        'USER': 'sajib',
+        'PASSWORD': 'nothing1234',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
