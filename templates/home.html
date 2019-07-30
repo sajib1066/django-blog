@@ -59,7 +59,7 @@
               <a class="post-category cat-1" href="category.html">{{ post.category }}</a>
               <span class="post-date">{{ post.pub_date }}</span>
             </div>
-            <h3 class="post-title"><a href="blog-post.html">{{ post.title }}</a></h3>
+            <h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
           </div>
         </div>
       </div>
@@ -499,31 +499,9 @@
         <!-- /ad -->
 
         <!-- catagories -->
-        <div class="aside-widget">
-          <div class="section-title">
-            <h2>Catagories</h2>
-          </div>
-          <div class="category-widget">
-            <ul>
-              {% for ctg in category %}
-              <li><a href="#" class="cat-1">{{ ctg.name }}<span>{{ ctg.post_set.count }}</span></a></li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
+        {% include 'base/category-tag.html' %}
         <!-- /catagories -->
 
-        <!-- tags -->
-        <div class="aside-widget">
-          <div class="tags-widget">
-            <ul>
-              {% for tag in tag %}
-              <li><a href="#">{{ tag.name }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <!-- /tags -->
       </div>
     </div>
     <!-- /row -->

@@ -1,0 +1,26 @@
+<!-- catagories -->
+<div class="aside-widget">
+  <div class="section-title">
+    <h2>Catagories</h2>
+  </div>
+  <div class="category-widget">
+    <ul>
+      {% for ctg in category %}
+      <li><a href="#" class="cat-1">{{ ctg.name }}<span>{{ ctg.post_set.count }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!-- /catagories -->
+
+<!-- tags -->
+<div class="aside-widget">
+  <div class="tags-widget">
+    <ul>
+      {% for tag in tag %}
+      <li><a href="#">{{ tag.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!-- /tags -->
