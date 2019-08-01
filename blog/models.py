@@ -26,7 +26,7 @@ class Category(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return '%s by %s' % (self.name, self.author)
 
 class Tags(models.Model):
     name = models.CharField(max_length=45, unique=True)
@@ -58,7 +58,7 @@ class Post(models.Model):
 
 class FeaturedPostManager(models.Manager):
     def featured_post(self):
-        f_post = FeaturedPost.objects.filter(is_draft=True).order_by('-date')[:2]
+        f_post = FeaturedPost.objects.filter(is_draft=False).order_by('-date')[:2]
         return f_post
 
 class FeaturedPost(models.Model):
