@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import AuthorProfile, Category, Tags, Post, FeaturedPost
-# Register your models here.
-admin.site.register(AuthorProfile)
+from .models import Category, Tags, Post, FeaturedPost
+
 admin.site.register(Category)
 admin.site.register(Tags)
 admin.site.register(Post)
