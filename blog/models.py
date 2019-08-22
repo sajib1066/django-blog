@@ -5,7 +5,7 @@ from author.models import AuthorProfile
 class Category(models.Model):
     name = models.CharField(max_length=45, unique=True)
     title = models.CharField(max_length=500)
-    ctg_image = models.ImageField(upload_to='media/ctg_images')
+    ctg_image = models.ImageField(upload_to='ctg-images/')
     author = models.ForeignKey(AuthorProfile, on_delete=models.SET_NULL, null=True, blank=True)
     create_date = models.DateTimeField(auto_now_add=True)
 
@@ -27,6 +27,7 @@ class PostManager(models.Manager):
 
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
+    image = models.ImageField(upload_to='post-image/')
     content = RichTextUploadingField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tags)
