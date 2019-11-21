@@ -12,3 +12,6 @@ def home_page(request):
         'recent_post': recent_post
     }
     return render(request, 'home.html', context)
+
+def category_page(request):
+    return render(request, 'category.html')
