@@ -1,9 +1,9 @@
-from blog.models import Category, Tags
+from blog.models import Category, Tags, MenuCategory
 
 def category_tag(request):
     category = Category.objects.all()
     tag = Tags.objects.all()
-    menu = Category.objects.all()[:4]
+    menu = MenuCategory.objects.all()
     context = {
         'category': category,
         'tag': tag,
