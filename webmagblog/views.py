@@ -16,7 +16,8 @@ def home_page(request):
     return render(request, 'home.html', context)
 
 def category_page(request, name):
+    category_name = Category.objects.get(name=name)
     context = {
-        'category_name': name
+        'category_name': category_name
     }
     return render(request, 'category.html', context)

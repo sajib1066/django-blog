@@ -29,13 +29,13 @@
 					<!-- post -->
 					<div class="col-md-12">
 						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="{% static './img/post-1.jpg' %}" alt=""></a>
+							<a class="post-img" href="blog-post.html"><img src="{{ category_name.ctg_image.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-2" href="#">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
+									<a class="post-category cat-2" href="#">{{ category_name }}</a>
+									<span class="post-date">{{ category_name.create_date }}</span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Javascript : Prototype vs Class</a></h3>
+								<h3 class="post-title"><a href="blog-post.html">{{ category_name }}: {{ category_name.title }}</a></h3>
 							</div>
 						</div>
 					</div>
