@@ -42,7 +42,7 @@ class Post(models.Model):
 
 class FeaturedPostManager(models.Manager):
     def featured_post(self):
-        f_post = FeaturedPost.objects.filter(is_draft=False).order_by('-date')[:2]
+        f_post = FeaturedPost.objects.filter(is_draft=False).order_by('-date')[:3]
         return f_post
 
 class FeaturedPost(models.Model):

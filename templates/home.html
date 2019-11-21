@@ -8,16 +8,16 @@
     <!-- row -->
     <div class="row">
       <!-- post -->
-      {% for f_post in featured_post %}
+      {% for f_post in header_post %}
       <div class="col-md-6">
         <div class="post post-thumb">
-          <a class="post-img" href="blog-post.html"><img src="{% static './img/post-1.jpg' %}" alt=""></a>
+          <a class="post-img" href="blog-post.html"><img src="{{ f_post.post.image.url }}" alt=""></a>
           <div class="post-body">
             <div class="post-meta">
               <a class="post-category cat-2" href="category.html">JavaScript</a>
-              <span class="post-date">March 27, 2018</span>
+              <span class="post-date">March 27, 2019</span>
             </div>
-            <h3 class="post-title"><a href="blog-post.html">{{ f_post.FeaturedPost.title }}</a></h3>
+            <h3 class="post-title"><a href="blog-post.html">{{ f_post.post.title }}</a></h3>
           </div>
         </div>
       </div>
