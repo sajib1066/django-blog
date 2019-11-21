@@ -15,5 +15,8 @@ def home_page(request):
     }
     return render(request, 'home.html', context)
 
-def category_page(request):
-    return render(request, 'category.html')
+def category_page(request, name):
+    context = {
+        'category_name': name
+    }
+    return render(request, 'category.html', context)
