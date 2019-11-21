@@ -54,3 +54,10 @@ class FeaturedPost(models.Model):
 
     def __str__(self):
         return str(self.post)
+
+class MenuCategory(models.Model):
+    menu = models.OneToOneField(Category, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.menu)
