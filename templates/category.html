@@ -1,5 +1,22 @@
 {% extends 'base/base.html' %}
 {% load static %}
+
+{% block extraheader %}
+<div class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<ul class="page-header-breadcrumb">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li>JavaScript</li>
+				</ul>
+				<h1>JavaScript</h1>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
 {% block content %}
 <!-- section -->
 <div class="section">
