@@ -14,7 +14,7 @@
           <a class="post-img" href="blog-post.html"><img src="{{ f_post.post.image.url }}" alt="" height="300px" width="550px"></a>
           <div class="post-body">
             <div class="post-meta">
-              <a class="post-category cat-2" href="category.html">JavaScript</a>
+              <a class="post-category cat-{{ forloop.counter }}" href="category.html">JavaScript</a>
               <span class="post-date">March 27, 2019</span>
             </div>
             <h3 class="post-title"><a href="blog-post.html">{{ f_post.post.title }}</a></h3>
@@ -40,7 +40,7 @@
           <a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt="" height="200px" width="350px"></a>
           <div class="post-body">
             <div class="post-meta">
-              <a class="post-category cat-1" href="category.html">{{ post.category }}</a>
+              <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.category }}</a>
               <span class="post-date">{{ post.pub_date }}</span>
             </div>
             <h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
@@ -215,7 +215,7 @@
             <a class="post-img" href="blog-post.html"><img src="{{ post.post.image.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
-                <a class="post-category cat-3" href="category.html">{{ post.post.category }}</a>
+                <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.post.category }}</a>
                 <span class="post-date">{{ post.post.pub_date }}</span>
               </div>
               <h3 class="post-title"><a href="blog-post.html">{{ post.post.title }}</a></h3>
