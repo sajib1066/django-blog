@@ -45,13 +45,13 @@
 					{% for post in ctg_feature_post %}
 					<div class="col-md-6">
 						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt="" width="350px" height="200px"></a>
+							<a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt="" width="350px" height="200px"></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-{{ post.category.id }}" href="#">{{ post.category }}</a>
 									<span class="post-date">{{ post.pub_date }}</span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">{{ post.title }}</a></h3>
+								<h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
 							</div>
 						</div>
 					</div>
@@ -75,13 +75,13 @@
 					{% for post in post %}
 					<div class="col-md-12">
 						<div class="post post-row">
-							<a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt=""></a>
+							<a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-{{ post.category.id }}" href="#">{{ post.category }}</a>
 									<span class="post-date">{{ post.pub_date}}</span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">{{ post.title }}</a></h3>
+								<h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
 								<p>{{ post.content|safe|truncatewords:30 }}</p>
 							</div>
 						</div>
@@ -117,9 +117,9 @@
 					</div>
 					{% for post in ctg_most_read_post %}
 					<div class="post post-widget">
-						<a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt=""></a>
+						<a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt=""></a>
 						<div class="post-body">
-							<h3 class="post-title"><a href="blog-post.html">{{ post.title }}</a></h3>
+							<h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
 						</div>
 					</div>
 					{% endfor %}
