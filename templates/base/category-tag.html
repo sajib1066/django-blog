@@ -6,7 +6,7 @@
   <div class="category-widget">
     <ul>
       {% for ctg in category %}
-      <li><a href="{% url 'category' ctg.name %}" class="cat-{{ forloop.counter }}">{{ ctg.name }}<span>{{ ctg.post_set.count }}</span></a></li>
+      <li><a href="{% url 'category' ctg.name %}" class="cat-{{ ctg.id }}">{{ ctg.name }}<span>{{ ctg.post_set.count }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
