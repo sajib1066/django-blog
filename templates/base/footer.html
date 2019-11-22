@@ -38,10 +38,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             <div class="footer-widget">
               <h3 class="footer-title">Catagories</h3>
               <ul class="footer-links">
-                <li><a href="category.html">Web Design</a></li>
-                <li><a href="category.html">JavaScript</a></li>
-                <li><a href="category.html">Css</a></li>
-                <li><a href="category.html">Jquery</a></li>
+                {% for menu in menu %}
+                <li><a href="{% url 'category' menu.menu %}">{{ menu.menu }}</a></li>
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -71,6 +70,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   </div>
   <!-- /container -->
   {% block extrafooter %}
-  
+
   {% endblock %}
 </footer>
