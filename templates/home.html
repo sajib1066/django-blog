@@ -11,13 +11,13 @@
       {% for post in header_post %}
       <div class="col-md-6">
         <div class="post post-thumb">
-          <a class="post-img" href="blog-post.html"><img src="{{ post.post.image.url }}" alt="" height="300px" width="550px"></a>
+          <a class="post-img" href="{% url 'blog-post' post.post.id %}"><img src="{{ post.post.image.url }}" alt="" height="300px" width="550px"></a>
           <div class="post-body">
             <div class="post-meta">
               <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.post.category }}</a>
               <span class="post-date">{{ post.post.pub_date }}</span>
             </div>
-            <h3 class="post-title"><a href="blog-post.html">{{ post.post.title }}</a></h3>
+            <h3 class="post-title"><a href="{% url 'blog-post' post.post.id %}">{{ post.post.title }}</a></h3>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
       {% for post in recent_post %}
       <div class="col-md-4">
         <div class="post">
-          <a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt="" height="200px" width="350px"></a>
+          <a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt="" height="200px" width="350px"></a>
           <div class="post-body">
             <div class="post-meta">
               <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.category }}</a>
@@ -60,7 +60,7 @@
           <!-- post -->
           <div class="col-md-12">
             <div class="post post-thumb">
-              <a class="post-img" href="blog-post.html"><img src="{% static './img/post-2.jpg' %}" alt=""></a>
+              <a class="post-img" href="#"><img src="{% static './img/post-2.jpg' %}" alt=""></a>
               <div class="post-body">
                 <div class="post-meta">
                   <a class="post-category cat-3" href="category.html">Jquery</a>
@@ -176,9 +176,9 @@
           </div>
           {% for post in most_read_post %}
           <div class="post post-widget">
-            <a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt="image"></a>
+            <a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt="image"></a>
             <div class="post-body">
-              <h3 class="post-title"><a href="blog-post.html">{{ post.title }}</a></h3>
+              <h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
             </div>
           </div>
           {% endfor %}
@@ -192,13 +192,13 @@
           </div>
           {% for post in featured_post %}
           <div class="post post-thumb">
-            <a class="post-img" href="blog-post.html"><img src="{{ post.post.image.url }}" alt=""></a>
+            <a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.post.image.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.post.category }}</a>
                 <span class="post-date">{{ post.post.pub_date }}</span>
               </div>
-              <h3 class="post-title"><a href="blog-post.html">{{ post.post.title }}</a></h3>
+              <h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.post.title }}</a></h3>
             </div>
           </div>
           {% endfor %}
@@ -236,13 +236,13 @@
       {% for post in featured_post %}
       <div class="col-md-4">
         <div class="post">
-          <a class="post-img" href="blog-post.html"><img src="{{ post.post.image.url }}" alt="" height="200px" width="350px"></a>
+          <a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.post.image.url }}" alt="" height="200px" width="350px"></a>
           <div class="post-body">
             <div class="post-meta">
               <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.post.category }}</a>
               <span class="post-date">{{ post.post.pub_date }}</span>
             </div>
-            <h3 class="post-title"><a href="blog-post.html">{{ post.post.title }}</a></h3>
+            <h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.post.title }}</a></h3>
           </div>
         </div>
       </div>
@@ -272,13 +272,13 @@
           {% for post in most_read_post %}
           <div class="col-md-12">
             <div class="post post-row">
-              <a class="post-img" href="blog-post.html"><img src="{{ post.image.url }}" alt=""></a>
+              <a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt=""></a>
               <div class="post-body">
                 <div class="post-meta">
                   <a class="post-category cat-{{ forloop.counter }}" href="category.html">{{ post.category }}</a>
                   <span class="post-date">{{ post.pub_date }}</span>
                 </div>
-                <h3 class="post-title"><a href="blog-post.html">{{ post.title }}</a></h3>
+                <h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
                 <p>{{ post.content|safe|truncatewords:30 }}</p>
               </div>
             </div>
