@@ -2,15 +2,15 @@
 {% load static %}
 {% block extraheader %}
 <div id="post-header" class="page-header">
-	<div class="background-img" style="background-image: url('./img/post-page.jpg');"></div>
+	<div class="background-img" style="background-image: url({{ post.category.ctg_image.url }});"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
 				<div class="post-meta">
-					<a class="post-category cat-2" href="category.html">JavaScript</a>
-					<span class="post-date">March 27, 2018</span>
+					<a class="post-category cat-{{ post.category.id }}" href="{% url 'category' post.category %}">{{ post.category }}</a>
+					<span class="post-date">{{ post.category.create_date }}</span>
 				</div>
-				<h1>Ask HN: Does Anybody Still Use JQuery?</h1>
+				<h1>{{ post.category.title }}</h1>
 			</div>
 		</div>
 	</div>
