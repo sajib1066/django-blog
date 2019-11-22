@@ -17,7 +17,11 @@ def home_page(request):
 
 def category_page(request, name):
     category_name = Category.objects.get(name=name)
+    ctg_feature_post = Post.objects.filter(category=category_name).order_by('-id')[:2]
+    post = Post.objects.filter(category=category_name)
     context = {
-        'category_name': category_name
+        'category_name': category_name,
+        'ctg_feature_post': ctg_feature_post,
+        'post': post
     }
     return render(request, 'category.html', context)
