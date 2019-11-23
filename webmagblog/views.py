@@ -27,3 +27,6 @@ def category_page(request, name):
         'post': post
     }
     return render(request, 'category.html', context)
+
+def about_page(request):
+    return render(request, 'about.html')

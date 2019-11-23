@@ -8,6 +8,7 @@ from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page, name='home'),
+    path('about/', views.about_page, name='about'),
     path('blog/', include('blog.urls')),
     path('category/<name>', views.category_page, name='category'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
