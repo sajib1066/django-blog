@@ -29,4 +29,8 @@ def category_page(request, name):
     return render(request, 'category.html', context)
 
 def about_page(request):
-    return render(request, 'about.html')
+    most_read_post = Post.objects.filter(is_draft=False).order_by('-id')[:4]
+    context = {
+        'most_read_post': most_read_post
+    }
+    return render(request, 'about.html', context)
