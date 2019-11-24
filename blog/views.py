@@ -6,6 +6,9 @@ def category(request):
     return render(request, 'blog/category.html')
 
 def blog_post(request, post):
-    post = Post.objects.get(id=post)
-    context = {'post': post}
-    return render(request, 'blog/blog-post.html', context)
+    try:
+        post = Post.objects.get(id=post)
+        context = {'post': post}
+        return render(request, 'blog/blog-post.html', context)
+    except:
+        return render(request, '404.html')

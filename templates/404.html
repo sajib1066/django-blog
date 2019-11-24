@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- section -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+          <h2>No Post Found</h2>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+
+				<!-- catagories and tags -->
+				{% include 'base/category-tag.html' %}
+				<!-- /catagories and tags -->
+
+				<!-- archive -->
+				<div class="aside-widget">
+					<div class="section-title">
+						<h2>Archive</h2>
+					</div>
+					<div class="archive-widget">
+						<ul>
+							<li><a href="#">Jan 2018</a></li>
+							<li><a href="#">Feb 2018</a></li>
+							<li><a href="#">Mar 2018</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /archive -->
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /section -->
+{% endblock %}
