@@ -2,6 +2,14 @@ from django.shortcuts import render
 
 from blog.models import FeaturedPost, Category, Tags, Post
 
+def error_404(request, allowed_hosts=True):
+    data = {'message': '404 - Page not found'}
+    return render(request, 'error.html', data)
+
+def error_500(request, allowed_hosts=True):
+    data = {'message': '500 Internal Server Error'}
+    return render(request, 'error.html', data)
+
 def home_page(request):
     header_post = FeaturedPost.objects.featured_post()[:2]
     featured_post = FeaturedPost.objects.featured_post()
