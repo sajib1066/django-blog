@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from blog.models import FeaturedPost, Category, Tags, Post
 
 def error_404(request, allowed_hosts=True):
@@ -19,7 +18,8 @@ def home_page(request):
         'header_post': header_post,
         'featured_post': featured_post,
         'recent_post': recent_post,
-        'most_read_post': most_read_post
+        'most_read_post': most_read_post,
+        'post': recent_post[2]
     }
     return render(request, 'home.html', context)
 
