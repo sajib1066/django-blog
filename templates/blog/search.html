@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- section -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+          {% if posts %}
+						{% for post in posts %}
+							<div class="col-md-6">
+								<div class="post">
+									<a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt="" width="350px" height="200px"></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-{{ post.category.id }}" href="#">{{ post.category }}</a>
+											<span class="post-date">{{ post.pub_date }}</span>
+										</div>
+										<h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					{% else %}
+						<h2>No Post Found. Please Search Again!</h2>
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="col-md-4">
+
+				<!-- catagories and tags -->
+				{% include 'base/category-tag.html' %}
+				<!-- /catagories and tags -->
+
+				<!-- archive -->
+				<div class="aside-widget">
+					<div class="section-title">
+						<h2>Archive</h2>
+					</div>
+					<div class="archive-widget">
+						<ul>
+							<li><a href="#">Jan 2018</a></li>
+							<li><a href="#">Feb 2018</a></li>
+							<li><a href="#">Mar 2018</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /archive -->
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /section -->
+{% endblock %}
