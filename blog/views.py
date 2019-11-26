@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, FeaturedPost
 
 # Create your views here.
 def category(request):
@@ -8,7 +8,13 @@ def category(request):
 def blog_post(request, post):
     try:
         post = Post.objects.get(id=post)
-        context = {'post': post}
+        most_read_post = Post.objects.filter(is_draft=False).order_by('-id')[:4]
+        featured_post = FeaturedPost.objects.featured_post()
+        context = {
+            'post': post,
+            'most_read_post': most_read_post,
+            'featured_post': featured_post
+        }
         return render(request, 'blog/blog-post.html', context)
     except:
         return render(request, '404.html')
