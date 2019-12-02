@@ -42,6 +42,3 @@ def about_page(request):
         'most_read_post': most_read_post
     }
     return render(request, 'about.html', context)
-
-def contact_page(request):
-    return render(request, 'contact.html')
