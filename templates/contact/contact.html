@@ -35,29 +35,34 @@
 			<div class="col-md-5 col-md-offset-1">
 				<div class="section-row">
 					<h3>Send A Message</h3>
-					<form>
+					<form method="post">
+						{% csrf_token %}
+						<div class="form-group">
+                {% if messages %}
+                  {% for message in messages %}
+                  <span{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: green">{{ message }}</span>
+                  {% endfor %}
+                {% endif %}
+              </div>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<span>Name</span>
-									<input class="input" type="text" name="name">
+									{{ forms.name }}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<span>Email</span>
-									<input class="input" type="email" name="email">
+									{{ forms.email }}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<span>Subject</span>
-									<input class="input" type="text" name="subject">
+									{{ forms.subject }}
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea class="input" name="message" placeholder="Message"></textarea>
+									{{ forms.message }}
 								</div>
 								<button class="primary-button">Submit</button>
 							</div>
