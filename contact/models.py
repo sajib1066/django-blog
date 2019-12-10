@@ -11,7 +11,7 @@ class Contact(models.Model):
         return self.name
 
 class NewsLetter(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(max_length=254)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
