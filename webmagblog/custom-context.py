@@ -1,5 +1,6 @@
 from blog.models import Category, Tags, MenuCategory, Post
 from django.db.models import Count
+from contact.forms import NewsletterForm
 
 
 def mycontext(request):
@@ -12,5 +13,17 @@ def mycontext(request):
         'tag': tag,
         'menu': menu,
         'posts': recent_post
+    }
+    return context
+
+def newsletter_form(request):
+    forms = NewsletterForm()
+    if request.method == 'POST':
+        forms = NewsletterForm(request.POST)
+        if forms.is_valid():
+            forms.save()
+
+    context = {
+        'forms': forms
     }
     return context

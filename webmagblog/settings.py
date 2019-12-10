@@ -66,6 +66,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'webmagblog.custom-context.mycontext',
+                'webmagblog.custom-context.newsletter_form',
+
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
