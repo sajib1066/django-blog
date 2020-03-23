@@ -1,5 +1,5 @@
 # Django Blog Web Application
-[![](http://img.youtube.com/vi/wL7rkrqPDBU/0.jpg)](http://www.youtube.com/watch?v=wL7rkrqPDBU "")
+[![](http://img.youtube.com/vi/u-ZMbQxhNC8/0.jpg)](http://www.youtube.com/watch?v=u-ZMbQxhNC8 "")
 
 ## Website Demo
 ![b-1](https://user-images.githubusercontent.com/39632170/63780390-d790f200-c909-11e9-9060-581828c8815c.png)
