@@ -1,8 +1,8 @@
 # Project Name: Django Blog Web Application
 
 ## How To Setup
-1. Clone This Project `git clone https://github.com/sajib1066/django_blog_application.git`
-2. Enter Project Directory `cd django_blog_application`
+1. Clone This Project `git clone https://github.com/sajib1066/django-blog.git`
+2. Enter Project Directory `cd django-blog`
 3. Create a Virtual Environment `virtualenv env`
 4. Activate Virtual Environment `source env/bin/activate`
 5. Install Requirements Package `pip install -r requirements.txt`
@@ -11,7 +11,7 @@
 8. Finally Run The Project `python manage.py runserver`
 
 ## Preview
-[![](http://img.youtube.com/vi/u-ZMbQxhNC8/0.jpg)](http://www.youtube.com/watch?v=u-ZMbQxhNC8 "")
+[![Preview](http://img.youtube.com/vi/u-ZMbQxhNC8/0.jpg)](http://www.youtube.com/watch?v=u-ZMbQxhNC8 "")
 
 ## Website Demo
 ![b-1](https://user-images.githubusercontent.com/39632170/63780390-d790f200-c909-11e9-9060-581828c8815c.png)
