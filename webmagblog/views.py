@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from blog.models import FeaturedPost, Category, Tags, Post
 
 def error_404(request, allowed_hosts=True):
@@ -10,18 +11,26 @@ def error_500(request, allowed_hosts=True):
     return render(request, 'error.html', data)
 
 def home_page(request):
-    header_post = FeaturedPost.objects.featured_post()[:2]
-    featured_post = FeaturedPost.objects.featured_post()
-    recent_post = Post.objects.filter(is_draft=False).order_by('-id')[:6]
-    most_read_post = Post.objects.filter(is_draft=False).order_by('-id')[:4]
-    context = {
-        'header_post': header_post,
-        'featured_post': featured_post,
-        'recent_post': recent_post,
-        'most_read_post': most_read_post,
-        'post': recent_post[2]
-    }
-    return render(request, 'home.html', context)
+    try:
+        header_post = FeaturedPost.objects.featured_post()[:2]
+        featured_post = FeaturedPost.objects.featured_post()
+        recent_post = Post.objects.filter(is_draft=False).order_by('-id')[:6]
+        most_read_post = Post.objects.filter(is_draft=False).order_by('-id')[:4]
+        context = {
+            'header_post': header_post,
+            'featured_post': featured_post,
+            'recent_post': recent_post,
+            'most_read_post': most_read_post,
+            'post': recent_post[2]
+        }
+        return render(request, 'home.html', context)
+    except Exception:
+        return HttpResponse(
+            """
+                <h2>Please add some blog from admin panel</h2>
+                <a href="admin">Admin Panel</a>
+            """
+        )
 
 def category_page(request, name):
     category_name = Category.objects.get(name=name)
